@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Admistration</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_AddEvent.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://kit.fontawesome.com/2cb83fc279.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+        <p class="TitleP">Add an Event to The Club</p>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      </nav>
+
+
+      <!-- Title -->
+
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+
+    <div class="container-fluid">
+
+      <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Your ID:</label>
+          <input id="empID" type="text" class="form-control"  >
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Name:</label>
+          <input id="name" type="text" class="form-control"  >
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Location:</label>
+          <input id="location" type="text" class="form-control"  >
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Price:</label>
+          <input id="price" type="text" class="form-control"  >
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Date</label>
+          <input id ="date"type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Transportation Capacity</label>
+          <input id="transcap" type="text" class="form-control"  >
+        </div>
+      </form>
+      <div class="form-check">
+  <input id="transportation" class="form-check-input" type="checkbox" value="" >
+  <label class="form-check-label" for="defaultCheck1">
+    Transportation Availability
+  </label>
+
+</div>
+<div class="form-group">
+  <label for="formGroupExampleInput">Capacity:</label>
+  <input id="capacity"type="text" class="form-control"  >
+</div>
+<button id="add" class="btn btn-primary" type="button">Add Event</button>
+
+
+
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="white-section foot" id="footer">
+    <i class="fa-brands fa-twitter cop"></i>
+    <i class="fa-brands fa-facebook-f cop"></i>
+    <i class="fa-brands fa-instagram cop"></i>
+    <i class="fa-solid fa-envelope cop"></i>
+    <p>© Copyright The Club</p>
+  </footer>
+
+<script>
+  function addEvent(){
+const Location = document.getElementById("location").value
+const Date = document.getElementById("date").value
+const capacity = document.getElementById("capacity").value
+const id = document.getElementById("empID").value
+const name = document.getElementById("name").value
+const transcap = document.getElementById("transcap").value
+const price = document.getElementById("price").value
+//checkbox?
+let transportation= 0
+if(document.getElementById("transportation").checked)
+{
+  transportation=1
+}
+
+if (Location && Date && capacity){
+  fetch(`http://localhost:5000/Event/newEvent`,{
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      Location,
+      Date,
+      capacity,
+      transportation,
+      id,
+      name,
+      transcap,
+      price
+    })
+  }).then(async(res)=>{
+    if(res.ok){
+    alert("Event Added")
+    } else {
+      alert("Event Failed To Add")
+    }
+  }).catch(err =>{
+    alert("Event Failed To Add")
+  })
+}else{
+  alert("Enter a valid Input")
+}
+}
+const button1 = document.getElementById("add")
+button1.addEventListener("click",addEvent)
+</script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Delete Member</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/TheClubLogo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_DeleteMember.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://kit.fontawesome.com/2cb83fc279.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+        <p class="TitleP">Remove A Member</p>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      </nav>
+
+
+      <!-- Title -->
+
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputCity">Member ID</label>
+          <input type="text" class="form-control" id="memberId"  >
+        </div>
+
+
+        </div>
+          <!-- <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="inputCity">First Name</label>
+              <input type="text" class="form-control" id="inputCity "  >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputCity">Last Name</label>
+              <input type="text" class="form-control" id="inputCity "  >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputCity">Age</label>
+              <input type="text" class="form-control" id="inputCity "  >
+            </div>
+
+      </div> -->
+        <div class="form-row">
+          <!-- <div class="form-group col-md-2">
+            <label for="inputCity">Subscribtion Type</label>
+            <input type="text" class="form-control" id="inputCity "  >
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputCity">Type of membership</label>
+            <input type="text" class="form-control" id="inputCity "  >
+          </div> -->
+          
+
+        </div>
+      <!-- <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputCity">Password</label>
+          <input type="text" class="form-control" id="inputCity "  >
+        </div>
+      </div> -->
+      <div>
+      <button id="DeleteMemberButton" class="btn btn-primary" type="submit" style="
+          margin-top: 10px;
+          padding-bottom: 6px;
+          margin-bottom: 230px;
+      ">Remove Member</button>
+    </div>
+
+    </form>
+  </section>
+
+  <!-- Footer -->
+
+  <footer class="white-section foot" id="footer">
+    <i class="fa-brands fa-twitter cop"></i>
+    <i class="fa-brands fa-facebook-f cop"></i>
+    <i class="fa-brands fa-instagram cop"></i>
+    <i class="fa-solid fa-envelope cop"></i>
+    <p>© Copyright The Club</p>
+  </footer>
+
+  <script>
+    function DeleteAMember() {
+      const idElement = document.getElementById("memberId")
+      const text = idElement.value
+      console.log(text)
+      if (text) {
+        fetch(`http://localhost:5000/IsAMember/${text}`).then(async (res) => {
+          const membersArray = await res.json()
+          console.log(res.json)
+          var exist = membersArray[0][0].exist;
+          if (exist === 0) {
+            alert("No members with this ID")
+          }
+          else
+          {
+            fetch(`http://localhost:5000/Deletemember/${text}`).then(async (res) => {
+          const membersArray = await res.json()
+          console.log(res.json)
+          alert("Member removed Successfully")
+          // populateMemberDetails(membersArray[0])
+      }).catch(err => console.log(err))
+          }
+      }).catch(err => console.log(err))
+
+      } else {
+        alert("Please Enter a valid number")
+
+      }
+    }
+    // function populateMemberDetails(member) {
+    //   document.getElementById("firstName").value = member.Fname
+    //   document.getElementById("lastName").value = member.Lname
+    //   document.getElementById("age").value = member.Age
+    //   document.getElementById("athleteState").value = member.Athlete_Status
+    //   document.getElementById("subscriptionType").value = member.Membership_Type
+    //   document.getElementById("subscriptionFees").value = member.Subscription
+    // }
+    const button = document.getElementById("DeleteMemberButton")
+    button.addEventListener("click", DeleteAMember)
+    </script>
+
+
+</body>
+
+</html>

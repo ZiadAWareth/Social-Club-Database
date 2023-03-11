@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Send Your FeedBack</title>
+  <!-- Favicon -->
+  <link rel="icon" href="images/FeedBack.png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_AnswerComplaints.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://kit.fontawesome.com/2cb83fc279.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+        <p class="TitleP">Send us your Feedback</p>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      </nav>
+
+
+      <!-- Title -->
+
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+
+    <form class="fmain">
+      <fieldset disabled>
+        <div class="form-row align-items-center memBox">
+          <div class="form-group-col-auto">
+
+            <div class="col-auto">
+              <label for="disabledTextInput">Member's ID</label>
+              <input id="MemberID" type="text" class="form-control mb-2" id="disabledTextInput" id="inlineFormInput"
+                placeholder="Disabled input">
+            </div>
+          </div>
+          <div class="form-group-col-auto">
+
+            <div class="col-auto">
+              <label for="disabledTextInput">Name</label>
+              <input id="name" type="text" class="form-control mb-2" id="disabledTextInput" id="inlineFormInput"
+                placeholder="Disabled input">
+            </div>
+          </div>
+
+
+          <div class="form-group-col-auto">
+
+            <div class="col-auto">
+              <label for="disabledTextInput">Complaints ID</label>
+              <input id="CID" type="text" class="form-control mb-2" id="disabledTextInput" id="inlineFormInput"
+                placeholder="Disabled input">
+            </div>
+          </div>
+        </div>
+        <div class="form-group memtext">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea id="message" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+        </div>
+        </div>
+      </fieldset>
+
+
+      <button id="view" class="btn btn-primary" type="button" style="margin-left: 7%;">View complaints</button>
+      <div class="form-row align-items-center empbox">
+        <div class="form-group-col-auto">
+
+          <div class="col-auto">
+            <label id="h"for="disabledTextInput">Your ID</label>
+            <input id="adminID" type="text" class="form-control mb-2" id="disabledTextInput" id="inlineFormInput">
+          </div>
+          
+          <div class="col-auto ">
+            <label for="disabledTextInput">Employee</label>
+            <select id="employeeID" class="form-control mb-2">
+              <% for(var i=0; i < employee.length; i++) { %>
+              <option value=<%=employee[i].E_ID%>><%=`${employee[i].Fname} ${employee[i].Lname}`%></option>
+              <% } %>
+            </select>
+          </div>
+        </div>
+        <div class="form-group-col-auto">
+
+          <div class="col-auto">
+            <label for="disabledTextInput">Complaints ID</label>
+            <input id="feedbackCID" type="text" class="form-control mb-2" id="disabledTextInput" id="inlineFormInput">
+          </div>
+        </div>
+      </div>
+      <div class="form-group feedbackbox">
+        <label for="exampleFormControlTextarea1">feedback for the employee</label>
+        <textarea class="form-control" id="feedbackMessage" rows="4"></textarea>
+        <button id="send" class="btn btn-primary" type="button">Send feedback</button>
+      </div>
+
+    </form>
+  </section>
+
+
+  <!-- Testimonials -->
+
+
+
+
+
+  <!-- Footer -->
+
+  <footer class="white-section foot" id="footer">
+    <i class="fa-brands fa-twitter cop"></i>
+    <i class="fa-brands fa-facebook-f cop"></i>
+    <i class="fa-brands fa-instagram cop"></i>
+    <i class="fa-solid fa-envelope cop"></i>
+    <p>© Copyright The Club</p>
+  </footer>
+
+
+  <script>
+
+    function getComplaintsDetails() {
+      fetch(`http://localhost:5000/Complaint`).then(async (res) => {
+        const ComplaintsArray = await res.json()
+        if (ComplaintsArray.length <= 0) {
+          alert("No more complaints to show")
+        }
+        console.log(ComplaintsArray[0][0])
+        populateMemberDetails(ComplaintsArray[0][0])
+      }).catch(err => console.log(err))
+    }
+
+    function populateMemberDetails(member) {
+      document.getElementById("MemberID").value = member.M_ID
+      document.getElementById("name").value = member.Fname
+      document.getElementById("message").value = member.message
+      document.getElementById("CID").value = member.C_ID
+      
+    }
+    function sendFeedback() {
+      const complaintID = document.getElementById("feedbackCID").value
+      const feedback = document.getElementById("feedbackMessage").value
+      const employeeID = document.getElementById("employeeID").value
+      const adminID=document.getElementById("adminID").value
+      console.log({complaintID,feedback,employeeID,adminID})
+      if (complaintID && feedback && employeeID) {
+        fetch(`http://localhost:5000/Complaint/${complaintID}/Feedback`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            
+            EmpID: employeeID,
+            message: feedback,
+            adminID: adminID
+
+          })
+        }).then(async (res) => {
+          if(res.ok){
+          alert("Response Submitted")
+          } else{
+            alert("Submission Failed")
+          }
+        }).catch(err => {
+          alert("Submission Failed")
+          console.log(err)
+        })
+      } else {
+        alert("Enter a valid number")
+      }
+
+    }
+
+    const button1 = document.getElementById("view")
+    button1.addEventListener("click", getComplaintsDetails)
+    const button2 = document.getElementById("send")
+    button2.addEventListener("click", sendFeedback)
+  </script>
+
+</body>
+
+</html>

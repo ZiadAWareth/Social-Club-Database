@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Admistration</title>
+  <!-- Favicon -->
+  <link rel="icon" href="images/TheClubLogo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Sacramento&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_AdminstrationHomepage.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://kit.fontawesome.com/2cb83fc279.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/SearchMember">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/AddMember">Add a Member</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/DeleteMember">Remove a Member</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/AnswerComplaints">Complaints</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/AddEvent">Add an Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/SignUp">Log Out</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+      <!-- Title -->
+      <div class="row">
+      <div class="col-lg-6">
+        <h1 class="Bigheading welcome">WELCOME !!</h1>
+        <h3 class="smallheading">What would you like to do?</h3>
+        <!--<button type="button" class="btn btn-light btn-lg download-btn"><i class="fa-brands fa-apple"></i> Download</button>-->
+        <!--<button type="button" class="btn btn-outline-light btn-lg download-btn"><i class="fa-brands fa-google-play"></i> Download</button>-->
+      </div>
+      <div class="col-lg-6">
+        <img class="img" src="images/AdminHome.png" alt="Adminstration_picture">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-solid fa-magnifying-glass fa-4x"></i>
+          <h3 class="feature-title">Search for a Member</h3>
+          <!-- <button type="button" class="btn btn-outline-light btn-lg download-btn"><a href="ViewEmployeeSalary.html">View Your Salary</a></button> -->
+          <button type="button" class="btn btn-info btn-lg download-btn"><a class="addlink" href="/SearchMember">SEARCH</a></button>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-solid fa-plus fa-4x"></i>
+          <h3 class="feature-title">Add a Member</h3>
+          <button type="button" class="btn btn-info btn-lg download-btn"><a class="addlink" href="/AddMember">ADD</a></button>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-solid fa-ban fa-4x"></i>
+          <h3 class="feature-title">Remove a Member</h3>
+          <button type="button" class="btn btn-info btn-lg download-btn"><a class="addlink" href="/DeleteMember">REMOVE</a></button>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section class="colored-section" id="testimonials">
+
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="feature-box col-lg-6">
+          <i class="icon fas fa-solid fa-envelope fa-4x" id="ComEve"></i>
+          <h3 class="feature-title">Answering Complaints</h3>
+          <button type="button" class="btn btn-outline-light btn-lg download-btn"><a class="addlink" href="/AnswerComplaints">COMPLAINTS</a></button>
+        </div>
+
+        <div class="feature-box col-lg-6">
+          <i class="icon fas fa-solid fa-calendar-plus fa-4x" id="ComEve"></i>
+          <h3 class="feature-title">Adding Events</h3>
+          <button type="button" class="btn btn-outline-light btn-lg download-btn"><a class="addlink" href="/AddEvent">ADD</a></button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <div class="row deletemember">
+    <div class="feature-box col-lg-4">
+      <i class="icon fas fa-4x fa-user-times"></i>
+      <h3 class="feature-title">View Cancellation Requests</h3>
+      <button type="button" class="btn btn-info btn-lg download-btn"><a class="addlink" href="/DeleteCancelledMember">View</a></button>
+    </div>
+    <div class="feature-box col-lg-4 show">
+      <i class="icon fas fa-4x fa-chart-pie"></i>
+      <h3 class="feature-title">Show Statistics</h3>
+      <button type="button" class="btn btn-info btn-lg download-btn"><a class="addlink" href="/ShowStatistics">Show</a></button>
+    </div>
+    <div class="feature-box col-lg-4 show">
+      <i class="icon fas fa-4x fa-solid fa-chart-line"></i>
+      <h3 class="feature-title">Show Reports</h3>
+      <button type="button" class="btn btn-info btn-lg download-btn"><a class="addlink" href="/ViewReports">Show</a></button>
+    </div>
+  </div>
+
+
+
+
+  <!-- Footer -->
+
+  <footer class="white-section foot" id="footer">
+    <i class="fa-brands fa-twitter cop"></i>
+    <i class="fa-brands fa-facebook-f cop"></i>
+    <i class="fa-brands fa-instagram cop"></i>
+    <i class="fa-solid fa-envelope cop"></i>
+    <p>© Copyright The Club</p>
+  </footer>
+
+
+
+</body>
+
+</html>

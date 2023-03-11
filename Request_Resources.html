@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Request Resources</title>
+ <!-- Favicon -->
+ <link rel="icon" href="images/requestResources.png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_RequestResources.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://kit.fontawesome.com/2cb83fc279.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+        <p class="TitleP">Request Your Resources</p>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      </nav>
+
+
+      <!-- Title -->
+
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+
+   
+      <div class="form-row firstone">
+        <div class="form-group col-md-2">
+          <label for="inputCity">Employee ID</label>
+          <input type="text" class="form-control" id="employeeId"  >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputState">Type of good</label>
+          <select id="Choice" class="form-control" >
+            <option selected>Food</option>
+            <option>Cuttlery</option>
+            <option>Sports Goods</option>
+            <option>Maintainance Tools</option>
+            <option>Security Equipment</option>
+            <option>Snacks</option>
+            <option>Electronic Equipments</option>
+          </select>
+        </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputZip">Quantity</label>
+          <input type="text" class="form-control" id="quantityBox" >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="disabledTextInput">Price</label>
+            <input type="text" class="form-control" id="priceBox" >
+          </div>
+        </div>
+
+
+            <button id="Request" class="btn btn-primary" type="submit" style="
+            margin-top: 10px;
+            padding-bottom: 6px;
+            margin-bottom: 140px;
+       ">Send request</button>
+  </section>
+  
+  <!-- Footer -->
+
+  <footer class="white-section foot" id="footer">
+    <i class="fa-brands fa-twitter cop"></i>
+    <i class="fa-brands fa-facebook-f cop"></i>
+    <i class="fa-brands fa-instagram cop"></i>
+    <i class="fa-solid fa-envelope cop"></i>
+    <p>© Copyright The Club</p>
+  </footer>
+
+  <script>
+    function RequestResources() {
+      const idElement = document.getElementById("employeeId")
+      const text = idElement.value
+
+      const GoodChoiceElement = document.getElementById("Choice")
+      const GoodChoice = GoodChoiceElement.value
+
+      const QuantityElement = document.getElementById("quantityBox")
+      const Quantity = QuantityElement.value
+
+      const priceElement = document.getElementById("priceBox")
+      const price = priceElement.value
+
+      // const StorageTypeElement = document.getElementById("StorageTypeBox")
+      // const StorageType = StorageTypeElement.value
+      
+      console.log(text)
+      if (text && GoodChoice && Quantity && price) {
+        fetch(`http://localhost:5000/IsRequested/${text}/${GoodChoice}`).then(async (res) => {
+          const InfoArray = await res.json()
+          var exist = InfoArray[0][0].exist;
+          if (exist === 1) {
+            // alert("It was requested before")
+            fetch(`http://localhost:5000/IncResources/${GoodChoice}/${price}/${Quantity}`).then(async (res) => {
+          const adminArray = await res.json()
+          alert("Resources Updated")
+      }).catch(err => console.log(err))
+          }
+          else{
+        fetch(`http://localhost:5000/RequestRes/${text}/${GoodChoice}/${Quantity}/${price}`).then(async (res) => {
+          const InfoArray = await res.json()
+          if (InfoArray.length <= 0) {
+            alert("No Employee with this ID")
+          }
+          alert("Request Submitted");
+      }).catch(err => console.log(err))
+    }
+  }).catch(err => console.log(err))
+      } else {
+        alert("Please Fill all the Boxes")
+      }
+    }
+    
+    // function populateMemberDetails(member) {
+    //   document.getElementById("firstName").value = member.Fname
+    //   document.getElementById("lastName").value = member.Lname
+    //   document.getElementById("age").value = member.Age
+    //   document.getElementById("athleteState").value = member.Athlete_Status
+    //   document.getElementById("subscriptionType").value = member.Membership_Type
+    //   document.getElementById("subscriptionFees").value = member.Subscription
+    // }
+    
+    const button = document.getElementById("Request")
+    button.addEventListener("click", RequestResources)
+    </script>
+</body>
+
+</html>

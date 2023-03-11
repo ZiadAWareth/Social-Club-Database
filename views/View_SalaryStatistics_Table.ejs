@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Salary Statistics</title>
+  <link rel="icon" href="images/ShowStatistics.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/View_SalaryStatistics_Table.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+       
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <p class="TitleP">View Statistics For Salary</p>
+
+      </nav>
+
+
+      <!-- Title -->
+
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Count Of Employees</th>
+            <!-- <th scope="col">Handle</th> -->
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < Salary.length; i++) { %>
+          <tr>
+            
+            <th scope="row"><%=`${i}`%></th>
+            <td><%=Salary[i].DepName%></td>
+            <td><%=Salary[i].num%></td>
+            
+          </tr>
+          <% } %>
+    
+        </tbody>
+      </table>
+      
+  </section>
+  
+ 
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <p>IT Contacts</p>
+    <p>01010827662|01000762239|01010390616|01277047562 </p>
+    <p style="
+     margin-bottom: 200px;
+ ">© Copyright 2022 The Club</p>
+    </div>
+  </footer>
+
+<!-- The Script for the file we are doing -->
+  
+</body>
+
+</html>

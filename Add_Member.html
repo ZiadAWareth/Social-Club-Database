@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Adding Member</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_AddMember.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+        <p class="TitleP">Adding a new member to The Club</p>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      </nav>
+
+
+      <!-- Title -->
+
+    </section>
+    
+    
+   
+  <!-- Features -->
+  <!-- <form action="/addmembers" method="post"> -->
+  <section class="white-section" id="features">
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputCity">New Member ID</label>
+          <input type="text" name="id" class="form-control" id="ID" maxlength="8">
+        </div>
+
+
+        </div>
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="inputCity">First Name</label>
+              <input type="text" name="fname" class="form-control" id="firstName"  >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputCity">Last Name</label>
+              <input type="text" name="lname" class="form-control" id="lastName"  >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputCity">Age</label>
+              <input type="text" name="AGE" class="form-control" id="age"  >
+            </div>
+
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="inputState">Subscription Type</label>
+            <select id="subscriptionType" name="substype" class="form-control athleteState" >
+              <option selected>regular</option>
+              <option>VIP</option>
+              <option>Seasonal</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputState">Athlete Status</label>
+            <select id="StatusChoice" name="Astatus" class="form-control athleteState" >
+              <option selected>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+
+        </div>
+      <div>
+      <button class="btn btn-primary" type="submit" style="
+          margin-top: 10px;
+          padding-bottom: 6px;
+          margin-bottom: 140px;
+      " id="ADD">Add Member</button>
+    </div>
+
+    <!-- </form> -->
+  </section>
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <p>IT Contacts</p>
+    <p>01010827662|01000762239|01010390616|01277047562 </p>
+    <p style="
+     margin-bottom: 0px;
+ ">© Copyright 2022 The Club</p>
+    </div>
+  </footer>
+
+  <script>
+    function addmember() {
+      const idElement = document.getElementById("ID")
+      const text = idElement.value
+   
+      let n=text.toString().split('').length
+
+
+      const FnameElement = document.getElementById("firstName")
+      const Fname = FnameElement.value
+
+      const lastnameElement = document.getElementById("lastName")
+      const Lname = lastnameElement.value
+
+      const ageElement = document.getElementById("age")
+      const age = ageElement.value
+
+      const subTypeElement = document.getElementById("subscriptionType")
+      const subType = subTypeElement.value
+
+if(subType==='regular')
+{
+  var subFees=350000;
+}
+else if(subType==='VIP')
+{
+  var subFees=500000;
+}
+else
+{
+  var subFees=100000;
+}
+
+      const AthleteStatusElement = document.getElementById("StatusChoice")
+      const AthleteStatus = AthleteStatusElement.value
+
+      // const passwordElement = document.getElementById("password")
+      // const password = passwordElement.value 
+      console.log(text)
+      if (text && Fname && Lname && age && subType && AthleteStatus) {
+        fetch(`http://localhost:5000/IsAMember/${text}`).then(async (res) => {
+      const membersArray = await res.json()
+      var exist = membersArray[0][0].exist;
+          if (exist === 1) {
+            alert("There is an existing member with this ID")
+          }
+          else{
+        fetch(`http://localhost:5000/addmembers/${text}/${Fname}/${Lname}/${age}/${subType}/${subFees}/${AthleteStatus}`).then(async (res) => {
+          const memberArray = await res.json()
+          alert("Member added Successfully")
+      }).catch(err => console.log(err))
+    }
+    }).catch(err => console.log(err))
+
+  
+    } else {
+        alert("Please fill all the boxes")
+      }
+    }
+    
+    
+    
+    const button = document.getElementById("ADD")
+    button.addEventListener("click", addmember)
+    </script>
+</body>
+
+</html>

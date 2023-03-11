@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Adding Admin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/TheClubLogo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/Styles_AddMember.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" style="padding-bottom: 0px;height: 20px;">
+
+        <a class="navbar-brand" href="">The Club</a>
+        <p class="TitleP">Welcoming a new leader to our Club</p>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      </nav>
+
+
+      <!-- Title -->
+
+    </section>
+    
+    
+   
+  <!-- Features -->
+  <!-- <form action="/addmembers" method="post"> -->
+  <section class="white-section" id="features">
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputCity">New Admin ID</label>
+          <input type="text" name="id" class="form-control" id="emID" maxlength="8">
+        </div>
+
+
+        </div>
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="inputCity">First Name</label>
+              <input type="text" name="fname" class="form-control" id="firstName"  >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputCity">Middle Name</label>
+              <input type="text" name="lname" class="form-control" id="middleName"  >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputCity">Last Name</label>
+              <input type="text" name="AGE" class="form-control" id="lastName"  >
+            </div>
+
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputCity">City</label>
+          <input type="text" name="fname" class="form-control" id="cit"  >
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputCity">District</label>
+          <input type="text" name="lname" class="form-control" id="dis"  >
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputCity">Street</label>
+          <input type="text" name="AGE" class="form-control" id="st" >
+        </div>
+
+  </div>
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="inputState">Working Days</label>
+            <select id="WD" name="substype" class="form-control athleteState" >
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputState">Salary</label>
+            <input type="text" name="salary" class="form-control" id="Salary"  >
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputCity">Department ID</label>
+            <input type="text" name="Depid" class="form-control" id="Depid" maxlength="8">
+          </div>
+        </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputCity">Password</label>
+          <input type="password" name="password" class="form-control" id="password"  >
+        </div>
+      </div>
+      
+      <div>
+      <button class="btn btn-primary" type="submit" style="
+          margin-top: 10px;
+          padding-bottom: 6px;
+          margin-bottom: 140px;
+      " id="ADD">Add Admin</button>
+    </div>
+
+    <!-- </form> -->
+  </section>
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <p>IT Contacts</p>
+    <p>01010827662|01000762239|01010390616|01277047562 </p>
+    <p style="
+     margin-bottom: 0px;
+ ">© Copyright 2022 The Club</p>
+    </div>
+  </footer>
+
+  <script>
+    function addadmin() {
+      const idElement = document.getElementById("emID")
+      const text = idElement.value
+
+
+      const FnameElement = document.getElementById("firstName")
+      const Fname = FnameElement.value
+
+      const midnameElement = document.getElementById("middleName")
+      const Mname = midnameElement.value
+    
+      const lastnameElement = document.getElementById("lastName")
+      const Lname = lastnameElement.value
+
+      const CityElement = document.getElementById("cit")
+      const city = CityElement.value
+
+      const DistElement = document.getElementById("dis")
+      const dist = DistElement.value
+
+      const StreetElement = document.getElementById("st")
+      const str = StreetElement.value
+
+      
+      const WorkDElement = document.getElementById("WD")
+      const workD = WorkDElement.value
+
+      const SElement = document.getElementById("Salary")
+      const salary = SElement.value
+
+      const DIDElement = document.getElementById("Depid")
+      const did = DIDElement.value
+
+
+      const passwordElement = document.getElementById("password")
+      const password = passwordElement.value 
+      console.log(text)
+      if (text && Fname && Mname && Lname && city && dist && str && workD && salary &&did) {
+        fetch(`http://localhost:5000/IsAnEmployee/${text}`).then(async (res) => {
+          const employeeArray = await res.json()
+          var exist = employeeArray[0][0].exist;
+          if (exist === 1) {
+            alert("There is an Admin with this ID")
+          }
+          else
+          {
+        fetch(`http://localhost:5000/addadmins/${text}/${Fname}/${Mname}/${Lname}/${city}/${dist}/${str}/${password}/${workD}/${salary}/${did}`).then(async (res) => {
+          const adminArray = await res.json()
+          // if (adminArray.length <= 0) {
+           alert("Admin Added Successfully")
+          // }
+      }).catch(err => console.log(err))
+    }
+  }).catch(err => console.log(err))
+      } else {
+        alert("Please Fill All Entries")
+      }
+    }
+    
+    
+    
+    const button = document.getElementById("ADD")
+    button.addEventListener("click", addadmin)
+    </script>
+</body>
+
+</html>
